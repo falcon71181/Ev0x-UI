@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/misc/(theme)/theme-provider";
 import { NavBar } from "@/components/nav/NavBar";
+import { Caveat } from 'next/font/google'
 import { Inter as FontSans } from "next/font/google"
 import "@/styles/globals.css";
 import { cn } from "@/lib/utils"
@@ -8,6 +9,13 @@ import { cn } from "@/lib/utils"
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
+})
+
+const caveat = Caveat({
+  subsets: ['latin'],
+  weight: ['700'],
+  variable: '--font-caveat',
+  display: 'swap'
 })
 
 export const metadata: Metadata = {
@@ -23,8 +31,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(
-        "min-h-screen font-sans antialiased flex flex-col items-center",
-        fontSans.variable)}>
+        "font-sans antialiased scroll-smooth flex flex-col items-center bg-background",
+        fontSans.variable, caveat.variable)}>
         <div className="relative h-full w-10/12">
           <ThemeProvider
             attribute="class"
@@ -33,7 +41,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <NavBar />
-            {children}
+            <div className="flex-grow">{children}</div>
           </ThemeProvider>
         </div>
       </body>
