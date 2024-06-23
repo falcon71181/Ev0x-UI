@@ -33,7 +33,7 @@ export default function RootLayout({
       <body className={cn(
         "font-sans antialiased scroll-smooth flex flex-col items-center bg-background",
         fontSans.variable, caveat.variable)}>
-        <div className="relative h-full w-10/12">
+        <div className="relative h-full w-full">
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

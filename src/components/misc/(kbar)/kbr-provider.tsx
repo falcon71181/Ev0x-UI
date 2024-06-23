@@ -1,3 +1,4 @@
+import { KBar } from "./kbar";
 import { ReactNode } from "react";
 import { KBarProvider, Action } from "kbar";
 import { useTheme } from "next-themes";
@@ -48,6 +49,7 @@ export const CustomKbarProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <KBarProvider actions={actions} >
+      <KBar />
       {children}
     </KBarProvider>
   )

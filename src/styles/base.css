@@ -49,7 +49,7 @@
 
 @layer base {
   body {
-    @apply bg-neutral-50 dark:bg-neutral-1000;
+    @apply bg-neutral-50 dark:bg-neutral-1000/80;
     @apply font-sans text-neutral-900 dark:text-neutral-300;
     @apply selection:bg-neutral-1000 selection:text-neutral-50 dark:selection:bg-neutral-50 dark:selection:text-neutral-1000;
   }
