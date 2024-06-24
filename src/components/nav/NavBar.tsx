@@ -21,7 +21,7 @@ const nav: NavMenu = [
   {
     label: "Components",
     target: "_self",
-    href: "/components",
+    href: "/ui/components",
   },
   {
     label: "Templates",
