@@ -19,7 +19,7 @@ const MenuItems: Menu[] = [
   {
     about: 'Components',
     links: [
-      { route: 'Accordion' },
+      { route: 'Accordion', new: true },
       { route: 'Avatar' },
       { route: 'Badge' },
       { route: 'Breadcrumbs' },
@@ -64,7 +64,7 @@ export function SidebarMenuItem({ menuItem, setIsOpen }: { menuItem: Menu, setIs
                   onClick={() => {
                     setIsOpen(false);
                   }}
-                  className="pl-3 group flex items-center gap-1 hover:border-l hover:border-neutral-1000 dark:hover:border-primary"
+                  className={`${path.includes(item.route.toLowerCase()) ? "border-l border-primary" : "hover:border-l hover:border-neutral-1000 dark:hover:border-primary"} pl-3 group flex items-center gap-1`}
                   href={`/ui/${menuItem.about.toLowerCase()}/${item.route.toLowerCase().replace(/\s+/g, '')}`}
                 >
                   <span
