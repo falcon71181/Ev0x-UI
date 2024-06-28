@@ -40,7 +40,7 @@ export const NavBar = () => {
           <Link href="/" className="font-extrabold text-2xl tracking-wider bg-gradient-to-tl from-[#ff4c88] to-[#ff8a63] bg-clip-text text-transparent select-none">Ev0x-UI</Link>
           <div className="ml-9 flex gap-4 text-sm">
             {nav.map((link) => (
-              <Link href={link.href} key={link.href} target={link.target} className={`${pathname === link.href ? "text-foreground font-semibold" : "text-foreground/60 hover:text-foreground/80"} transition-colors`}>{link.label}</Link>
+              <Link href={link.href} key={link.href} target={link.target} className={`${pathname.includes(link.href) ? "text-foreground font-semibold" : "text-foreground/60 hover:text-foreground/80"} transition-colors`}>{link.label}</Link>
             ))}
           </div>
         </section>

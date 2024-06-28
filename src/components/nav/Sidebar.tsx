@@ -19,28 +19,29 @@ const MenuItems: Menu[] = [
   {
     about: 'Components',
     links: [
-      { route: 'Accordion', new: true },
-      { route: 'Avatar' },
-      { route: 'Badge' },
+      { route: 'Accordion' },
+      { route: 'Avatar', new: true },
+      { route: 'Badge', new: true },
       { route: 'Breadcrumbs' },
-      { route: 'Button' },
+      { route: 'Button', new: true },
       { route: 'Card' },
       { route: 'Carousel' },
-      { route: 'CheckBox' },
+      { route: 'CheckBox', new: true },
       { route: 'Dropdown' },
       { route: 'Footer' },
       { route: 'Form' },
       { route: 'File Upload' },
       { route: 'Hero' },
       { route: 'Input' },
-      { route: 'Loader' },
+      { route: 'Loader', new: true },
       { route: 'Navbar' },
       { route: 'Pagination' },
       { route: 'Progress' },
       { route: 'Rating' },
       { route: 'Select' },
-      { route: 'Skeleton' },
-      { route: 'Tooltip' }
+      { route: 'Skeleton', new: true },
+      { route: 'Toggle Switch', new: true },
+      { route: 'Tooltip' },
     ]
   },
 ];
@@ -64,7 +65,7 @@ export function SidebarMenuItem({ menuItem, setIsOpen }: { menuItem: Menu, setIs
                   onClick={() => {
                     setIsOpen(false);
                   }}
-                  className={`${path.includes(item.route.toLowerCase()) ? "border-l border-primary" : "hover:border-l hover:border-neutral-1000 dark:hover:border-primary"} pl-3 group flex items-center gap-1`}
+                  className={`${path.includes(item.route.toLowerCase()) ? "border-l border-primary" : "hover:border-l hover:border-neutral-1000 dark:hover:border-primary"} pl-3 group flex items-center justify-between gap-1`}
                   href={`/ui/${menuItem.about.toLowerCase()}/${item.route.toLowerCase().replace(/\s+/g, '')}`}
                 >
                   <span
@@ -73,9 +74,9 @@ export function SidebarMenuItem({ menuItem, setIsOpen }: { menuItem: Menu, setIs
                     {item?.route}
                   </span>
                   <span
-                    className={`rounded-lg border px-1 text-xs ${item.new ? 'border-cyan-400 bg-cyan-400/20 text-cyan-400' : item.updated ? 'border-orange-500 bg-orange-500/20 text-orange-500' : 'hidden'}`}
+                    className={`rounded-lg text-xs ${item.new ? 'text-red-600 dark:text-cyan-400' : item.updated ? ' bg-orange-500/20 text-orange-500' : 'hidden'}`}
                   >
-                    {item.new ? 'new' : item.updated ? 'updated' : null}
+                    {item.new ? 'NEW' : item.updated ? 'UPDATED' : null}
                   </span>
                 </Link>
               </div>
