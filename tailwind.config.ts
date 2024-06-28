@@ -66,10 +66,25 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        buttonheartbeat: {
+          '0%': {
+            'box-shadow': '0 0 0 0 theme("colors.red.500")',
+            transform: 'scale(1)',
+          },
+          '50%': {
+            'box-shadow': '0 0 0 7px theme("colors.red.500/0")',
+            transform: 'scale(1.05)',
+          },
+          '100%': {
+            'box-shadow': '0 0 0 0 theme("colors.red.500/0")',
+            transform: 'scale(1)',
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        buttonheartbeat: 'buttonheartbeat 2s infinite ease-in-out',
       },
       fontFamily: {
         handwrite: 'var(--font-caveat)',
