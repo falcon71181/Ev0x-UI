@@ -94,9 +94,9 @@ export default function Sidebar() {
   return (
     <>
       <div
-        className="sticky select-none h-[90vh] pr-16 overflow-y-auto duration-300"
+        className="no-scrollbar sticky select-none h-[90vh] pr-16 overflow-y-auto duration-300"
       >
-        <div className="sidebar mt-2 overflow-y-scroll pl-5">
+        <div className="no-scrollbar sidebar mt-2 overflow-y-scroll pl-5">
           {MenuItems.map((menuItem: Menu, idx: number) => (
             <SidebarMenuItem key={idx} setIsOpen={setIsOpen} menuItem={menuItem} />
           ))}
