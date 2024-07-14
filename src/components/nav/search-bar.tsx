@@ -1,5 +1,5 @@
 import { useKBar } from 'kbar'
-import { SearchIcon } from 'lucide-react'
+import { SearchIcon, CommandIcon } from 'lucide-react'
 
 export function Search() {
   const {
@@ -17,7 +17,10 @@ export function Search() {
           Search...
         </span>
       </span>
-      <kbd className="text-neutral-900 dark:text-neutral-400 keyboard hidden md:flex">Ctrl K</kbd>
+      <kbd className="text-neutral-900 dark:text-neutral-400 keyboard hidden md:flex md:gap-2 md:justify-center md:items-center">
+        <CommandIcon className='size-3.5' />
+        <h1 className='size-4 font-extrabold flex items-center justify-center'>K</h1>
+      </kbd>
     </button>
   )
 }
